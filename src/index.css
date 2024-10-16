@@ -1,0 +1,98 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.min.css';
+
+
+.imagem-fundo{
+    min-height: 100%;
+    background-image: url(./assets/images/bateria.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+.table-wrapper {
+    max-height: 69vh; 
+    overflow-y: auto; 
+}
+
+.header_geral{
+    background-color: #0FC067;
+    margin:-8px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.4em; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    color:#fff;
+    font-family: "Cantarell", sans-serif;
+}
+
+body {
+    font-family: "Cantarell", sans-serif;
+}
+
+.sidebar {
+    height: 110vh;
+    width: 80px;
+    background-color: #11A55B;
+    transition: width 0.4s;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sidebar:hover {
+    width: 200px;
+    overflow: visible;
+}
+
+ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1em;
+}
+
+li a {
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+li a:hover {
+    color: #ffffff9d;
+    background-image: linear-gradient(to right, #b9ffc8 5px, rgba(255, 255, 255, 0.1)3px);
+    color: #ffffff;
+    cursor: pointer;
+    transition: width 1s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+li p {
+    width: 65px;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    transition: width 1s;
+    color:#ffffff;
+}
+
+.nav-icon_img {
+    text-align: right;
+    color: white;
+    transition: width 0.3s;
+    margin-left: -0.8em;
+}
