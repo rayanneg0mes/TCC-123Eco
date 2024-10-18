@@ -84,12 +84,7 @@ console.log(currentUser);
                                 <p>Produto Coletado</p>
                             </Link>
                         </li>
-                        <li>
-                            <Link>
-                                <img className="nav-icon_img" src={saida} alt="" height="27px" width="27px" />
-                                <p>Encerrar Sessão</p>
-                            </Link>
-                        </li>
+                      
                     </ul>
                 </nav>
             </div>

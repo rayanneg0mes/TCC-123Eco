@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const goto = () => {
-        navigate("/home");
+        navigate("/postocoleta");
     }
 
     const backto = () => {
@@ -39,7 +39,7 @@ const Login = () => {
                 const userJson = localStorage.getItem("user");
                 const user = JSON.parse(userJson || '{}');
                 if (user.statusUsuario == 'ATIVO') {
-                    navigate("/home");
+                    navigate("/postocoleta");
                 } else if (user.statusUsuario == 'TROCAR_SENHA') {
                     navigate(`/newpass/` + user.id);
                     //window.location.reload(); ordnael@email.com.br

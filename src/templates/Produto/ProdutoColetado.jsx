@@ -37,6 +37,7 @@ const ProdutoColetado = () => {
       <div className="container-lg my-5">
         <h2 className="text-center my-3">Lista de Produto Coletado</h2>
         <table className="table table-striped table-hover ">
+        
           <thead>
             <tr>
               <th scope="col">ID</th>

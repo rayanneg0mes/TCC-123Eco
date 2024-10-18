@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
-import logo from '../../assets/images/home.png'
+import logo from '../../assets/images/logo.png'
 import { useEffect } from "react"
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
@@ -20,6 +20,7 @@ const MensagemLer = () => {
         emissor: "",
         texto: "",
         telefone: "",
+        resposta: "",
         statusMensagem: ""
     };
     const [mensagem, setMensagem] = useState(objectValues);
@@ -30,7 +31,7 @@ const MensagemLer = () => {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setFormData(formData => ({ ...formData, [name]: value }));
+        setMensagem(mensagem => ({ ...mensagem, [name]: value }));
     }
 
     useEffect(() => {
@@ -46,6 +47,22 @@ const MensagemLer = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setSuccessful(false);
+
+        MensagemService.responder(id, formData).then(
+            (response) => {
+                setMessage(response.data.message);
+                setSuccessful(true);
+                window.location.reload();
+
+            }, (error) => {
+                const message = error.response.data.message;
+                setMessage(message);
+            }
+        )
+    }
+
+    const inativar = () => {
         setSuccessful(false);
 
         MensagemService.inativar(id).then(
@@ -132,7 +149,8 @@ const MensagemLer = () => {
 
                         <div className="col-md-12 my-2">
                             <label htmlFor="inputResposta" className="form-label mb-1 fw-bold">Resposta:</label>
-                            <textarea rows={5} className="form-control" id="inputResposta" 
+                            <textarea rows={5} className="form-control" id="inputResposta"
+                                name="resposta"
                                 defaultValue={mensagem.resposta || ''} >
                             </textarea>
                         </div>
@@ -142,7 +160,8 @@ const MensagemLer = () => {
                                 onClick={() => marcarComoLida()}>
                                 Marcar como Lida
                             </button>
-                            <button type="button" className="btn btn-danger">
+                            <button type="button" className="btn btn-danger"
+                                onClick={() => inativar()}>
                                 Inativar
                             </button>
                             <button type="submit" className="btn btn-success">

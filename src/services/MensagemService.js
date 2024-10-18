@@ -27,11 +27,19 @@ const marcarComoLida = (id) => {
     return http.mainInstance.put(API_URL + `marcarComoLida/${id}`);
 };
 
+const responder = (id, data) => {
+    const formData = new FormData();
+    formData.append('resposta', data.resposta);
+ 
+    return http.mainInstance.put(API_URL + `responder/${id}`, formData);
+};
+
 const MensagemService = {
     findAll,
     findById,
     create,
     inativar,
+    responder,
     marcarComoLida,
 }
 

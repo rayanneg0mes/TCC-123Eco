@@ -123,7 +123,7 @@ function App() {
                   value={formData.email || ""}
                   onChange={handleChange} />
 
-                <textarea rows="5" placeholder="Sua Mensajem" required
+                <textarea rows="5" placeholder="Sua Mensagem" required
                   name="texto"
                   value={formData.texto || ""}
                   onChange={handleChange}>

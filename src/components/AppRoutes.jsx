@@ -85,8 +85,6 @@ const AppRoutes = () => {
         <Route path="/produtover/:id" element={<ProdutoVer />} />
         <Route path="/produtoler/:id" element={<ProdutoLer />} />
 
-
-
       </Routes>
     </div>
   )
